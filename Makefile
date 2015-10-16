@@ -27,7 +27,7 @@ flash:	$(TARGET)
 	avrdude $(AVRFLAGS) -U flash:w:$(TARGET)
 
 clean:
-	rm -f *.0 *.hex *.o usbdrv/*.o
+	rm -f *.0 *.hex *.o
 
 fuse:
 	avrdude $(AVRFLAGS) -U efuse:w:$(EFUSE):m -U hfuse:w:$(HFUSE):m -U lfuse:w:$(LFUSE):m
