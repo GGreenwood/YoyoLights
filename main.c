@@ -6,8 +6,8 @@
 #define CLEAR_BIT(TGT, PIN) do { TGT &= ~(1 << (PIN)); } while(0)
 #define TOGGLE_BIT(TGT, PIN) do { TGT ^= (1 << (PIN)); } while(0)
 
-#define LED0    PB0
-#define LED1    PB2
+#define LED0    (PB0)
+#define LED1    (PB2)
 
 // Set LED lines as output
 void setup_pins(void) {
@@ -19,9 +19,9 @@ int main(void)
 {
     setup_pins();
     while(1) {
-        PORTB = LED0 | LED1;
-        _delay_ms(1);
+        PORTB = 0xff;
+        _delay_us(600);
         PORTB = 0;
-        _delay_ms(1);
+        _delay_us(1200);
     }
 }
